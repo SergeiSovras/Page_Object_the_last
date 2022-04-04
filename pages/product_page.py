@@ -29,6 +29,9 @@ class ProductPage(BasePage):
 
     def should_be_item_name(self):
         assert self.is_element_present(*ProductPageLocators.ITEM_NAME), "Name isn't presented"
+        name1 = self.is_element_present(*ProductPageLocators.ITEM_NAME),
+        name2 = self.is_element_present(*ProductPageLocators.ITEM_NAME2),
+        assert name1 == name2, "Names are not equal"
 
     def should_be_success_message(self):
         assert self.is_element_present(*ProductPageLocators.MESSAGE), "Message isn't presented"
