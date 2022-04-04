@@ -13,7 +13,7 @@ class LoginPageLocators():
 
 class ProductPageLocators():
     ADD_BUTTON = (By.CSS_SELECTOR, 'button.btn-add-to-basket')
-    ITEM_NAME = (By.XPATH, "//div/strong[1]")
+    ITEM_NAME = (By.XPATH, "//div[@class='alertinner ']/strong")
     ITEM_NAME2 = (By.XPATH, "//div[contains(@class, 'product_main')]/h1")
 
     MESSAGE = (By.XPATH, "//strong[contains(text(), 'Deferred benefit offer')]")

@@ -1,4 +1,5 @@
 import math
+
 from .base_page import BasePage
 from .locators import ProductPageLocators
 from selenium.common.exceptions import NoAlertPresentException
@@ -29,8 +30,9 @@ class ProductPage(BasePage):
 
     def should_be_item_name(self):
         assert self.is_element_present(*ProductPageLocators.ITEM_NAME), "Name isn't presented"
-        name1 = self.is_element_present(*ProductPageLocators.ITEM_NAME),
-        name2 = self.is_element_present(*ProductPageLocators.ITEM_NAME2),
+        name1 = self.browser.find_element(*ProductPageLocators.ITEM_NAME),
+        assert self.is_element_present(*ProductPageLocators.ITEM_NAME2), "Name2 isn't presented"
+        name2 = self.browser.find_element(*ProductPageLocators.ITEM_NAME),
         assert name1 == name2, "Names are not equal"
 
     def should_be_success_message(self):
