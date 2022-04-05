@@ -28,18 +28,21 @@ class ProductPage(BasePage):
         except NoAlertPresentException:
             print("No second alert presented")
 
-    def should_be_item_name(self):
+    def should_be_item_names(self):
         assert self.is_element_present(*ProductPageLocators.ITEM_NAME), "Name isn't presented"
-        name1 = self.browser.find_element(*ProductPageLocators.ITEM_NAME),
         assert self.is_element_present(*ProductPageLocators.ITEM_NAME2), "Name2 isn't presented"
-        name2 = self.browser.find_element(*ProductPageLocators.ITEM_NAME),
-        assert name1 == name2, "Names are not equal"
 
     def should_be_success_message(self):
         assert self.is_element_present(*ProductPageLocators.MESSAGE), "Message isn't presented"
 
     def prises_should_be_equal(self):
-        price1 = self.browser.find_element(*ProductPageLocators.PRICE)
-        price2 = self.browser.find_element(*ProductPageLocators.PRICE_ITEM)
-        assert price1.text == price2.text, "Values are not equal"
+        price1 = self.browser.find_element(*ProductPageLocators.PRICE).text
+        price2 = self.browser.find_element(*ProductPageLocators.PRICE_ITEM).text
+        assert price1 == price2, "Values are not equal"
+
+    def names_should_be_equal(self):
+        name1 = self.browser.find_element(*ProductPageLocators.ITEM_NAME).text,
+        name2 = self.browser.find_element(*ProductPageLocators.ITEM_NAME2).text,
+        #print(name1, name2)
+        assert name1 == name2, "Names are not equal"
 
