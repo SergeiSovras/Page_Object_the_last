@@ -7,7 +7,7 @@ class BasePageLocators():
 class BasketPageLocators():
     BASKET_LINK = (By.CSS_SELECTOR, ".btn-group a")
     SUPPLIES_AREA = (By.CSS_SELECTOR, ".row h2.col-sm-6")
-    EMPTY_TEXT = (By.CSS_SELECTOR, "#content_inner")
+    EMPTY_TEXT = (By.CSS_SELECTOR, "#content_inner > p a")
 
 #class MainPageLocators():
     #LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
